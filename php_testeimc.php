@@ -20,14 +20,14 @@
 				$altura =  $_POST['altura'];
 
 				require_once( 'imc.php');
-				$IMC = new \jacknpoe\IMC( floatval( str_replace( ',', '.', $peso)),floatval( str_replace( ',', '.', $altura)));
+				$IMC = new \jacknpoe\IMC( floatval( str_replace( ',', '.', $peso)), floatval( str_replace( ',', '.', $altura)));
 				$resultado = "IMC de " . number_format( $IMC->IMC, 14, ",", ".") . ", seu quadro é de: " . $IMC->getQuadro();
 			}
 		?>
 		<h1>Calculadora de IMC (Índice de Massa Corpórea)<br></h1>
 
 		<form action="php_testeimc.php" method="POST" style="border: 0px">
-			<p>Peso: <input type="text" name="peso" value="<?php echo $peso; ?>" style="width: 50px"> quilos</p>
+			<p>Peso: <input type="text" name="peso" value="<?php echo $peso; ?>" style="width: 50px" autofocus> quilos</p>
 			<p>Altura: <input type="text" name="altura" value="<?php echo $altura; ?>" style="width: 50px"> metros</p>
 			<p><input type="submit" name="calcular" value="Calcular"></p>
 		</form>
