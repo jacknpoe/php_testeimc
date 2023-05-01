@@ -27,8 +27,8 @@
 		<h1>Calculadora de IMC (Índice de Massa Corpórea)<br></h1>
 
 		<form action="php_testeimc.php" method="POST" style="border: 0px">
-			<p>Peso: <input type="text" name="peso" value="<?php echo $peso; ?>" style="width: 50px" autofocus> quilos</p>
-			<p>Altura: <input type="text" name="altura" value="<?php echo $altura; ?>" style="width: 50px"> metros</p>
+			<p>Peso: <input type="text" name="peso" value="<?php echo htmlspecialchars( $peso, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, "ISO-8859-1"); ?>" style="width: 50px" autofocus> quilos</p>
+			<p>Altura: <input type="text" name="altura" value="<?php echo htmlspecialchars( $altura, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, "ISO-8859-1"); ?>" style="width: 50px"> metros</p>
 			<p><input type="submit" name="calcular" value="Calcular"></p>
 		</form>
 
