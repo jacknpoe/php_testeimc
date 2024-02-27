@@ -13,15 +13,18 @@
 	class IMC
 	{
 		public $IMC = 0;
+		public $ideal = 0;
 
 		function __construct( $peso = 0.0, $altura = 0.0)		// vamos ver se tem como sobrecarregar!
 		{
 			if( $altura == 0.0)
 			{
 				$this->IMC = 0;
+				$this->ideal = 0;
 			} else
 			{
 				$this->IMC = $peso / pow( $altura, 2);
+				$this->ideal = 21.75 * $altura * $altura;
 			}
 		}
 
